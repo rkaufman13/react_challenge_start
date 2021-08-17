@@ -14,10 +14,10 @@ export const AppointmentForm = (props) => {
 <label for="appointment">{props.isDuplicate?<span className="error">Duplicate appointment found</span>:"Appointment:"}</label>
 <br/>
 <input type="text" name="title" value={props.title} onChange={props.onChange} placeholder="name of your appointment" required></input>
-{props.contacts?
+{props.contacts.length?
 <ContactPicker contacts={props.contacts} value={props.withwhom} onChange={props.onChange}/>:""
 }
-<label for="date">Date of appointment:</label>
+<br/><label for="date">Date of appointment:</label>
 <br/><input type="date" name="date" value={props.date} min={getTodayString()} onChange={props.onChange} placeholder="date of the appointment"></input>
 <br/><label for="time">Time of appointment:</label><br/>
 <input type="time" name="time" value={props.time} onChange={props.onChange} placeholder="time"></input>
